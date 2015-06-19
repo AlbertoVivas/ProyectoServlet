@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory name="miSesionFactory">
+        <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+        <property name="hibernate.connection.password">a123456</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
+        <property name="hibernate.connection.username">HR</property>
+        <property name="hibernate.default_schema">HR</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+        
+        
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">1</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">false</property>
+
+        <!-- Mapping files -->
+        <mapping resource="tablas_Clases\Countries.hbm.xml"/>
+        <mapping resource="tablas_Clases\Departments.hbm.xml"/>
+        <mapping resource="tablas_Clases\EmpDetailsView.hbm.xml"/>
+        <mapping resource="tablas_Clases\Employees.hbm.xml"/>
+        <mapping resource="tablas_Clases\JobHistory.hbm.xml"/>
+        <mapping resource="tablas_Clases\Jobs.hbm.xml"/>
+        <mapping resource="tablas_Clases\Locations.hbm.xml"/>
+        <mapping resource="tablas_Clases\Regions.hbm.xml"/>
+        
+        
+        
+    </session-factory>
+</hibernate-configuration>

@@ -4,6 +4,7 @@
 package miservlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -24,7 +25,13 @@ public class MiServlet extends HttpServlet{
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		System.out.println("Ha llamado a doget");
-		super.doGet(req, resp);
+		String nombre = req.getParameter("nombre");
+		System.out.println("doget nombre: "+nombre);
+		String respuesta= "el numero de letras del nombre: "+nombre+" es: "+nombre.length();
+		resp.setContentType(respuesta);
+		PrintWriter printWriter = resp.getWriter();
+		printWriter.println(respuesta);
+		//super.doGet(req, resp);
 	}
 
 	/* (non-Javadoc)
