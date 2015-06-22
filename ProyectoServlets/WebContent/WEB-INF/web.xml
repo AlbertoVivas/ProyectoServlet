@@ -28,4 +28,14 @@
     <url-pattern> /ServletObtenerEmpleado </url-pattern>
   </servlet-mapping>
   
+  <listener>
+	<listener-class>src.ClaseServletContextListener</listener-class>
+  </listener>
+  <listener>
+	<listener-class>src.ClaseHttpSessionListener</listener-class>
+  </listener>
+  <listener>
+	<listener-class>src.ClaseServletRequestListener</listener-class>
+  </listener>
+	
 </web-app>

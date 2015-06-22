@@ -2,6 +2,9 @@ package practica1.hibernate;
 
 import java.io.Serializable;
 
+import javax.servlet.ServletContext;
+
+import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.Session;
 import practica1.hibernate.SessionManager;
@@ -28,9 +31,13 @@ public class EmpleadoHibernateDAO implements Recuperable {
 		Employees empleado = null;
 		Transaction trans = null;
 		try{		
-		session =  SessionManager.obtenerSession();	
+		session =  SessionManager.obtenerSession();
+		//ServletContext sc = req.getServletContext();
+		//SessionFactory sf = (SessionFactory) sc.getAttribute("sf");
+		//session = sf.openSession();	
+		
 		trans = session.beginTransaction();
-		empleado= (Employees) session.get(Employees.class, (Serializable) id);
+		empleado= (Employees) session.get(Employees.class,(Serializable) id);
 		}catch(Exception e){
 			e.printStackTrace();
 			trans.rollback();

@@ -20,7 +20,9 @@ public class SessionManager {
 	private static StandardServiceRegistryBuilder builder;
 	private static SessionFactory factory;
 	
+	@SuppressWarnings("unused")
 	private  static SessionManager sessionManager = new SessionManager();
+
 	
 
 	private SessionManager(){
@@ -42,13 +44,19 @@ public class SessionManager {
 	}
 	
 	
-	@SuppressWarnings("static-access")
-	public static void closeFactory(){
+	public static void closeFactory(SessionFactory sf){
 		try{
-			sessionManager.factory.close();
+			sf.close();
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+	}
+
+	/**
+	 * @return
+	 */
+	public static SessionFactory obtenerFactory() {
+		return factory;
 	}
 	
 	

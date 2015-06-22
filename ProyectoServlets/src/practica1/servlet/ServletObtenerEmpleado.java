@@ -8,10 +8,14 @@ import practica1.hibernate.Recuperable;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 import practica1.hibernate.EmployeesServices;
 import practica1.hibernate.EmpleadoHibernateDAO;
@@ -38,9 +42,15 @@ public class ServletObtenerEmpleado extends HttpServlet {
 		// TODO Auto-generated method stub
 		try {
 		System.out.println("Ha llamado a doget");
+		
+		ServletContext sc = req.getServletContext();
+		SessionFactory sf = (SessionFactory) sc.getAttribute("sf");
+		Session session = sf.openSession();
+		session.close();
+		
 		String nombre = req.getParameter("id");
 		Integer i = new Integer(nombre);
-		
+	
 		EmployeesServices es = new EmployeesServices();
 		
 		Recuperable emp_hiber = new EmpleadoHibernateDAO();
@@ -79,7 +89,7 @@ public class ServletObtenerEmpleado extends HttpServlet {
 	protected void service(HttpServletRequest arg0, HttpServletResponse arg1)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("ha llamado a service");
+		System.out.println("Ha llamado a service");
 		super.service(arg0, arg1);
 	}
 }

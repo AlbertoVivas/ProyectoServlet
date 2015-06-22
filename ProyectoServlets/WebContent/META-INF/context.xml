@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<Context docBase="ProyectoServlet" path="/MiServlet" reloadable="true">
+<Context docBase="ProyectoServlets" path="/ProyectoServlets" reloadable="true">
 <Resource 
 	name="jdbc/pool" 
 	auth="Container" 

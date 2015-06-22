@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * 
  */
+@SuppressWarnings("serial")
 public class MiServlet extends HttpServlet{
 	/* (non-Javadoc) 
 	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)

@@ -4,16 +4,18 @@
 		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory name="miSesionFactory">
+       	<!--  
         <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
         <property name="hibernate.connection.password">a123456</property>
         <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:xe</property>
         <property name="hibernate.connection.username">HR</property>
         <property name="hibernate.default_schema">HR</property>
         <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
-        
+        -->
         
         <!-- JDBC connection pool (use the built-in) -->
-        <property name="connection.pool_size">1</property>
+        <!--  <property name="connection.pool_size">1</property>-->
+        <property name="hibernate.connection.datasource">java:comp/env/jdbc/pool</property>
 
         <!-- SQL dialect -->
         <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
