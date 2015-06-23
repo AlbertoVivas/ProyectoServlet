@@ -28,6 +28,35 @@
     <url-pattern> /ServletObtenerEmpleado </url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name> ServletObtenerEmpleadoHibernate</servlet-name>
+  	<servlet-class> practica1.servlet.ServletObtenerEmpleadoHibernate</servlet-class>    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name> ServletObtenerEmpleadoHibernate </servlet-name>
+    <url-pattern> /ServletObtenerEmpleadoHibernate </url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name> ServletObtenerEmpleadoJDBC</servlet-name>
+  	<servlet-class> practica1.servlet.ServletObtenerEmpleadoJDBC</servlet-class>    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name> ServletObtenerEmpleadoJDBC </servlet-name>
+    <url-pattern> /ServletObtenerEmpleadoJDBC </url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name> ServletIncrementarSalarioEmpleados</servlet-name>
+  	<servlet-class> practica1.servlet.ServletIncrementarSalarioEmpleados</servlet-class>    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name> ServletIncrementarSalarioEmpleados </servlet-name>
+    <url-pattern> /ServletIncrementarSalarioEmpleados </url-pattern>
+  </servlet-mapping>
+  
+  
+  
   <listener>
 	<listener-class>src.ClaseServletContextListener</listener-class>
   </listener>
@@ -37,5 +66,46 @@
   <listener>
 	<listener-class>src.ClaseServletRequestListener</listener-class>
   </listener>
+  
+  
+  <filter>
+      <filter-name>MyFilter</filter-name>
+      <filter-class>src.MyFilter</filter-class>
+  </filter>
+	<filter-mapping>
+	    <filter-name>MyFilter</filter-name>
+	    <url-pattern>/ServletObtenerEmpleado</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+      <filter-name>MyFilterHibernate</filter-name>
+      <filter-class>src.MyFilterHibernate</filter-class>
+  </filter>
+	<filter-mapping>
+	    <filter-name>MyFilterHibernate</filter-name>
+	    <url-pattern>/ServletObtenerEmpleadoHibernate</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+      <filter-name>MyFilterJDBC</filter-name>
+      <filter-class>src.MyFilterJDBC</filter-class>
+  </filter>
+	<filter-mapping>
+	    <filter-name>MyFilterJDBC</filter-name>
+	    <url-pattern>/ServletObtenerEmpleadoJDBC</url-pattern>
+	</filter-mapping>
+	
+	
+	<context-param> 
+	    <param-name>inc</param-name> 
+	    <param-value>20</param-value>    
+	</context-param>
+	<!-- 
+	<context-param>
+          <param-name>username</param-name>  
+          <param-value>system</param-value>  
+	</context-param>
+	 -->
+	
 	
 </web-app>

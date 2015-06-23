@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 /**
  * @author Alberto Vivas
  *
@@ -18,6 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @SuppressWarnings("serial")
 public class MiServlet extends HttpServlet{
+	private final Logger log = LogManager.getRootLogger();
 	/* (non-Javadoc) 
 	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 */
@@ -26,6 +30,7 @@ public class MiServlet extends HttpServlet{
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		System.out.println("Ha llamado a doget");
+		log.trace("Ha llamado a doget");
 		String nombre = req.getParameter("nombre");
 		System.out.println("doget nombre: "+nombre);
 		String respuesta= "el numero de letras del nombre: "+nombre+" es: "+nombre.length();

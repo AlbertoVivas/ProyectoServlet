@@ -18,7 +18,6 @@ public class ClaseHttpSessionListener implements HttpSessionListener {
 	 */
 	@Override
 	public void sessionCreated(HttpSessionEvent arg0) {
-		// TODO Auto-generated method stub
 		System.out.println("sessionCreated(HttpSessionEvent arg0)");
 	}
 
@@ -27,7 +26,6 @@ public class ClaseHttpSessionListener implements HttpSessionListener {
 	 */
 	@Override
 	public void sessionDestroyed(HttpSessionEvent arg0) {
-		// TODO Auto-generated method stub
 		System.out.println("sessionDestroyed(HttpSessionEvent arg0)");
 	}
 

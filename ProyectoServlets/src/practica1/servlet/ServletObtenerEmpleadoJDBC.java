@@ -3,10 +3,9 @@
  */
 package practica1.servlet;
 
-import practica1.hibernate.Recuperable;
-
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -19,21 +18,19 @@ import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import practica1.hibernate.EmployeesServices;
 import practica1.hibernate.EmpleadoHibernateDAO;
-
-
-import java.sql.SQLException;
+import practica1.hibernate.EmployeesServices;
+import practica1.hibernate.Recuperable;
+import practica1.jdbc.EmpleadoDTO;
+import practica1.jdbc.EmpleadoJDBDAO;
 import tablas_Clases.Employees;
-
 
 /**
  * @author Alberto Vivas
  *
  * 
  */
-@SuppressWarnings("serial")
-public class ServletObtenerEmpleado extends HttpServlet {
+public class ServletObtenerEmpleadoJDBC extends HttpServlet {
 	private final Logger log = LogManager.getRootLogger();
 	private String botom_volver="<form method=\"get\" action=\"http://localhost:8090/ProyectoServlets/Empleado.html\"> <button type= \"submit\">Back</button> </form>";
 	/* (non-Javadoc) 
@@ -43,27 +40,27 @@ public class ServletObtenerEmpleado extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException {
 
 		Session session = null;
-		try {
+		try { 
 			System.out.println("Ha llamado a doget");
 			log.trace("Ha llamado al doget, en ServletObtenerEmpleado");
 			ServletContext sc = req.getServletContext();
 			SessionFactory sf = (SessionFactory) sc.getAttribute("sf");
 			session = sf.openSession();
 			EmpleadoHibernateDAO.setSession(session);
-			
+
 			int num_pet = (int) sc.getAttribute("num_pet");
 			num_pet++;
 			sc.setAttribute("num_pet", num_pet);
-
+			
 			String parametro = req.getParameter("id");
 			// Integer i = new Integer(nombre);
-			Employees e = null;
+			EmpleadoDTO e = null;
 			try {
 				Integer i = new Integer(parametro);
 				EmployeesServices es = new EmployeesServices();
-				Recuperable emp_hiber = new EmpleadoHibernateDAO();
+				Recuperable emp_hiber = new EmpleadoJDBDAO();
 				es.setRecuperable(emp_hiber);
-				e = (Employees) es.leerEmpleado(i);
+				e = (EmpleadoDTO) es.leerEmpleado(i);
 				if (e != null) {
 					resp.setContentType("text/html");
 					PrintWriter printWriter = resp.getWriter();

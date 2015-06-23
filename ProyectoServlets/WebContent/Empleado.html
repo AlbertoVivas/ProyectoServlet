@@ -5,10 +5,35 @@
 <title>Obtener un empleado por Id</title>
 </head>
 <body>
-<h1> Obtener un empleado por la id</h1> 
+<h1> Obtener un empleado por la id</h1>
+<!-- 
+<p> normal</p> 
 <form action="ServletObtenerEmpleado" method="get"> 
 <input type ="text" name = "id" />
 <input type="submit" value="Enviar"/>
 </form> 
+ -->
+
+<p> usando Hibernate</p> 
+<form action="ServletObtenerEmpleadoHibernate" method="get"> 
+<input type ="text" name = "id" />
+<input type="submit" value="Enviar"/>
+</form> 
+
+
+<p> usando JDBC</p> 
+<form action="ServletObtenerEmpleadoJDBC" method="get"> 
+<input type ="text" name = "id" />
+<input type="submit" value="Enviar"/>
+</form> 
+
+
+
+<form action="ServletIncrementarSalarioEmpleados" method="post"> 
+<input type="submit" value="Incrementar el Salario de los empleados"/>
+</form> 
+
+
+
 </body>
 </html>

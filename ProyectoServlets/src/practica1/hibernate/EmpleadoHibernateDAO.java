@@ -2,18 +2,12 @@ package practica1.hibernate;
 
 import java.io.Serializable;
 
-import javax.servlet.ServletContext;
-
-import org.hibernate.SessionFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.hibernate.Transaction;
 import org.hibernate.Session;
-import practica1.hibernate.SessionManager;
 import tablas_Clases.Employees;
 import practica1.hibernate.Recuperable;
-
-/**
- * 
- */
 
 /**
  * @author Alberto Vivas
@@ -21,28 +15,31 @@ import practica1.hibernate.Recuperable;
  * 
  */
 public class EmpleadoHibernateDAO implements Recuperable {
-
+	
+	private final Logger log = LogManager.getRootLogger();
+	private static Session session;
+	public static Session getSession() {
+		return session;
+	}
+	public static void setSession(Session session) {
+		EmpleadoHibernateDAO.session = session;
+	}
 	/* (non-Javadoc)
 	 * @see interfaceRecuperable.Recuperable#leerEmpleado(int)
 	 */
 	@Override
 	public Object leerEmpleado(Object id) {
-		Session session =null;
 		Employees empleado = null;
 		Transaction trans = null;
-		try{		
-		session =  SessionManager.obtenerSession();
-		//ServletContext sc = req.getServletContext();
-		//SessionFactory sf = (SessionFactory) sc.getAttribute("sf");
-		//session = sf.openSession();	
-		
+		try{			
+		if(session!= null){
 		trans = session.beginTransaction();
 		empleado= (Employees) session.get(Employees.class,(Serializable) id);
+		}
 		}catch(Exception e){
+			log.error("Error en leer empleado: "+id);
 			e.printStackTrace();
 			trans.rollback();
-		}finally{
-			SessionManager.disconectSession(session);
 		}
 		return empleado;
 	}

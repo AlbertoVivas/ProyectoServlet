@@ -18,7 +18,6 @@ public class ClaseServletRequestListener implements ServletRequestListener {
 	 */
 	@Override
 	public void requestDestroyed(ServletRequestEvent arg0) {
-		// TODO Auto-generated method stub
 		System.out.println("requestDestroyed(ServletRequestEvent arg0)");
 	}
 
@@ -27,9 +26,7 @@ public class ClaseServletRequestListener implements ServletRequestListener {
 	 */
 	@Override
 	public void requestInitialized(ServletRequestEvent arg0) {
-		// TODO Auto-generated method stub
 		System.out.println("requestInitialized(ServletRequestEvent arg0)");
-		
 	}
 
 }

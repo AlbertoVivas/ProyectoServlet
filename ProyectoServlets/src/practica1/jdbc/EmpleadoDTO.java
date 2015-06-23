@@ -185,4 +185,24 @@ public class EmpleadoDTO implements Comparable<EmpleadoDTO>{
 	public void setDepartment_id(String department_id) {
 		this.department_id = department_id;
 	}
+	
+	public String toStringjdbc() {
+		String respuesta="";
+		
+		respuesta+="-------------------------------------"+"<br>\n";
+		//respuesta+="Identificador de empleado: "+employeeId+"<br>\n";
+		respuesta+="Nombre: "+first_name+"<br>\n";
+		respuesta+="Apellido: "+last_name+"<br>\n";
+		respuesta+="Email: "+email+"<br>\n";
+		respuesta+="Numero de teléfono: "+phone_number+"<br>\n";
+		respuesta+="Fecha de inicio de contrato: "+hire_date+"<br>\n";
+		//respuesta+="Identificador de Trabajo: "+jobs.getJobId()+"<br>\n";
+		respuesta+="Salario: "+salary+"<br>\n";
+		respuesta+="Comision(%): "+commision_pct+"<br>\n";
+		//respuesta+="Identificador del Manager: "+employees+"<br>\n";
+		//respuesta+="Identidicador del Departamento: "+departments.getDepartmentId()+"<br>\n";
+		respuesta+="-------------------------------------<br>";
+		return respuesta;
+		//return this.first_name+" "+this.last_name+" "+this.salary;
+	}
 }

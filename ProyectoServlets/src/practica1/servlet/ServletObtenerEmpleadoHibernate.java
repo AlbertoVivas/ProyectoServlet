@@ -3,10 +3,9 @@
  */
 package practica1.servlet;
 
-import practica1.hibernate.Recuperable;
-
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -19,13 +18,10 @@ import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import practica1.hibernate.EmployeesServices;
 import practica1.hibernate.EmpleadoHibernateDAO;
-
-
-import java.sql.SQLException;
+import practica1.hibernate.EmployeesServices;
+import practica1.hibernate.Recuperable;
 import tablas_Clases.Employees;
-
 
 /**
  * @author Alberto Vivas
@@ -33,9 +29,10 @@ import tablas_Clases.Employees;
  * 
  */
 @SuppressWarnings("serial")
-public class ServletObtenerEmpleado extends HttpServlet {
+public class ServletObtenerEmpleadoHibernate extends HttpServlet {
 	private final Logger log = LogManager.getRootLogger();
 	private String botom_volver="<form method=\"get\" action=\"http://localhost:8090/ProyectoServlets/Empleado.html\"> <button type= \"submit\">Back</button> </form>";
+	
 	/* (non-Javadoc) 
 	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 */
@@ -119,3 +116,4 @@ public class ServletObtenerEmpleado extends HttpServlet {
 		super.service(arg0, arg1);
 	}
 }
+
