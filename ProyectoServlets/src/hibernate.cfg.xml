@@ -21,7 +21,7 @@
         <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
 
         <!-- Echo all executed SQL to stdout -->
-        <property name="show_sql">false</property>
+        <property name="show_sql">true</property>
 
         <!-- Mapping files -->
         <mapping resource="tablas_Clases\Countries.hbm.xml"/>
@@ -32,6 +32,7 @@
         <mapping resource="tablas_Clases\Jobs.hbm.xml"/>
         <mapping resource="tablas_Clases\Locations.hbm.xml"/>
         <mapping resource="tablas_Clases\Regions.hbm.xml"/>
+        <mapping resource="tablas_Clases\Users.hbm.xml"/>
         
         
         

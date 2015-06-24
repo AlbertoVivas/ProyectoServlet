@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-jun-2015 16:06:59 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping package = "tablas_Clases">
+    <class name="Users" table="USERS">
+        <id name="nombre" type="string">
+            <column name="NOMBRE" length="15" />
+            <generator class="assigned" />
+        </id>
+        <property name="clave" type="string">
+            <column name="CLAVE" length="15" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

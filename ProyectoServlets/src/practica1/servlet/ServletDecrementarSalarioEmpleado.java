@@ -6,7 +6,6 @@ package practica1.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
-import java.sql.SQLException;
 import java.util.Iterator;
 import java.util.List;
 
@@ -16,15 +15,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.hibernate.Transaction;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 
-import practica1.hibernate.EmpleadoHibernateDAO;
-import practica1.hibernate.EmployeesServices;
-import practica1.hibernate.Recuperable;
 import tablas_Clases.Employees;
 
 /**
@@ -32,7 +28,7 @@ import tablas_Clases.Employees;
  *
  * 
  */
-public class ServletIncrementarSalarioEmpleados extends HttpServlet {
+public class ServletDecrementarSalarioEmpleado extends HttpServlet {
 	private final Logger log = LogManager.getRootLogger();
 	private String botom_volver="<form method=\"get\" action=\"http://localhost:8090/ProyectoServlets/Empleado.html\"> <button type= \"submit\">Back</button> </form>";
 	/* (non-Javadoc) 
@@ -62,7 +58,7 @@ public class ServletIncrementarSalarioEmpleados extends HttpServlet {
 		num_pet++;
 		sc.setAttribute("num_pet", num_pet);
 		
-		String gsc = getServletContext().getInitParameter("inc");
+		String gsc = getServletContext().getInitParameter("dec");
 		BigDecimal d = new BigDecimal(gsc);
 		incrementarSalarioXporCiento(d, session);
 		

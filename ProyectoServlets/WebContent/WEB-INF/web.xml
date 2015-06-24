@@ -55,6 +55,44 @@
     <url-pattern> /ServletIncrementarSalarioEmpleados </url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name> ServletDecrementarSalarioEmpleado</servlet-name>
+  	<servlet-class> practica1.servlet.ServletDecrementarSalarioEmpleado</servlet-class>    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name> ServletDecrementarSalarioEmpleado </servlet-name>
+    <url-pattern> /ServletDecrementarSalarioEmpleado </url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name> ServletIgualSalarioEmpleado</servlet-name>
+  	<servlet-class> practica1.servlet.ServletIgualSalarioEmpleado</servlet-class>    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name> ServletIgualSalarioEmpleado </servlet-name>
+    <url-pattern> /ServletIgualSalarioEmpleado </url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  	<servlet-name> ServletLogin</servlet-name>
+  	<servlet-class> practica1.servlet.ServletLogin</servlet-class>    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name> ServletLogin </servlet-name>
+    <url-pattern> /ServletLogin </url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name> ServletSession</servlet-name>
+  	<servlet-class> practica1.servlet.ServletSession</servlet-class>    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name> ServletSession </servlet-name>
+    <url-pattern> /ServletSession</url-pattern>
+  </servlet-mapping>
+  
+  
   
   
   <listener>
@@ -100,12 +138,16 @@
 	    <param-name>inc</param-name> 
 	    <param-value>20</param-value>    
 	</context-param>
-	<!-- 
-	<context-param>
-          <param-name>username</param-name>  
-          <param-value>system</param-value>  
+	
+	<context-param> 
+	    <param-name>igual</param-name> 
+	    <param-value>0</param-value>    
 	</context-param>
-	 -->
 	
+	<context-param> 
+	    <param-name>dec</param-name> 
+	    <param-value>-20</param-value>    
+	</context-param>
 	
+
 </web-app>
