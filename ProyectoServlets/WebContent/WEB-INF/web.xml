@@ -92,6 +92,25 @@
     <url-pattern> /ServletSession</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name> ServletSessionesActivas</servlet-name>
+  	<servlet-class> practica1.servlet.ServletMostratSesionesActivas</servlet-class>    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name> ServletSessionesActivas </servlet-name>
+    <url-pattern> /ServletSessionesActivas</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name> ServletListaDepartamentos</servlet-name>
+  	<servlet-class> practica1.servlet.ServletListaDepartamentos</servlet-class>    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name> ServletListaDepartamentos </servlet-name>
+    <url-pattern> /ServletListaDepartamentos</url-pattern>
+  </servlet-mapping>
+  
+  
   
   
   
@@ -149,5 +168,6 @@
 	    <param-value>-20</param-value>    
 	</context-param>
 	
+	<session-config> <session-timeout>2</session-timeout></session-config>
 
 </web-app>

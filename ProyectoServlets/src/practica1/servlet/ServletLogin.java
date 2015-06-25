@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -29,7 +30,7 @@ import tablas_Clases.Users;
 @SuppressWarnings("serial")
 public class ServletLogin extends HttpServlet {
 	private final Logger log = LogManager.getRootLogger();
-	private String botom_volver = "<form method=\"get\" action=\"http://localhost:8090/ProyectoServlets/Login.html\"> <button type= \"submit\">Back</button> </form>";
+	private String botom_volver = "<form method=\"get\" action=\"http://172.16.1.57:8090/ProyectoServlets/Login.html\"> <button type= \"submit\">Back</button> </form>";
 
 	/*
 	 * (non-Javadoc)
@@ -43,6 +44,7 @@ public class ServletLogin extends HttpServlet {
 			throws ServletException, IOException {
 		// Session session;
 		Users user_get = null;
+		HttpSession httpsession = null;
 
 		UsersHibernateDAO uhdao = new UsersHibernateDAO();
 
@@ -66,6 +68,12 @@ public class ServletLogin extends HttpServlet {
 				printWriter.println("Bienvenido: " + user.getNombre());
 				// printWriter.println("Numero de peticiones: "+num_pet);
 				printWriter.println(botom_volver);
+				httpsession = req.getSession();
+				log.debug("Id de la sesión = " + httpsession.getId());
+				httpsession.setAttribute("nombre", user.getNombre());
+				log.trace("Se ha creado la session al usuario: "+req.getSession(false).getAttribute("nombre"));
+				
+				
 			} else {
 				resp.setContentType("text/html");
 				PrintWriter printWriter = resp.getWriter();

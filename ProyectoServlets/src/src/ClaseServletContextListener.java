@@ -5,9 +5,13 @@ package src;
 
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import javax.servlet.http.HttpSession;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -41,6 +45,11 @@ public class ClaseServletContextListener implements ServletContextListener {
 		int num_pet=0;
 		sc.setAttribute("num_pet", num_pet);
 		log.trace("contextInitialized, setted atribute sf&num_pet of server context");
+		Map<String,HttpSession> map = new HashMap<String, HttpSession>();
+		sc.setAttribute("map", map);
+		
+		
+		
 	}
 	/* (non-Javadoc)
 	 * @see javax.servlet.ServletContextListener#contextDestroyed(javax.servlet.ServletContextEvent)
