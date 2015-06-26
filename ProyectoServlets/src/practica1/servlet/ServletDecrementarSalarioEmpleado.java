@@ -25,7 +25,7 @@ import tablas_Clases.Employees;
 
 /**
  * @author Alberto Vivas
- *
+ *	Clase para decrementar el salario de los empleados, en el webxml esta el % de decremento.
  * 
  */
 public class ServletDecrementarSalarioEmpleado extends HttpServlet {

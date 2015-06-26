@@ -25,7 +25,7 @@ import tablas_Clases.Employees;
 
 /**
  * @author Alberto Vivas
- *
+ *	clase que incrementa en 0 el salario de los empleados, pero muestra la lista de empleados.
  * 
  */
 public class ServletIgualSalarioEmpleado extends HttpServlet {

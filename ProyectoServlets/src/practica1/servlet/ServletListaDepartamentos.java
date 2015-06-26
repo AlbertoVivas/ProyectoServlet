@@ -22,7 +22,9 @@ import tablas_Clases.Departments;
 
 /**
  * @author Alberto Vivas
- *
+ *	Clase que devuelve la losta de departamentos por un menu desplegable
+ *	en esta clase el acceso a la BBDD se hace correctamente en una clase 
+ *	aparte, adicionalmente se muestra el nuemero de sesiones activas.
  * 
  */
 public class ServletListaDepartamentos extends HttpServlet{
@@ -34,12 +36,7 @@ public class ServletListaDepartamentos extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
-		//ServletContext sc = req.getServletContext();
-		//SessionFactory sf = (SessionFactory) sc.getAttribute("sf");
-		//session = sf.openSession();
 		Departments d;
-		
-		//List<Departments> list = session.createSQLQuery("Select * from DEPARTMENTS").addEntity(Departments.class).list();
 		
 		List<Departments> list = DepartamentosHibernate.obtenerDepartamentos(req);
 		resp.setContentType("text/html");

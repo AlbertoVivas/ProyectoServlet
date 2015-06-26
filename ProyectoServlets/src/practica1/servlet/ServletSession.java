@@ -17,7 +17,7 @@ import org.apache.logging.log4j.Logger;
 
 /**
  * @author Alberto Vivas
- *
+ *	Servlet de sesiones
  * 
  */
 public class ServletSession extends HttpServlet{

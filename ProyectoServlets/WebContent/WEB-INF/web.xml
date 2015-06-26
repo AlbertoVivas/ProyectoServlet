@@ -174,16 +174,7 @@
   </filter>
 	<filter-mapping>
 	    <filter-name>  MyFilter                         </filter-name>
-	    <url-pattern> /ServletObtenerEmpleadoJDBC       </url-pattern>
-	    <url-pattern> /ServletObtenerEmpleadoHibernate  </url-pattern>
-	    <url-pattern> /ServletRedirectTamara            </url-pattern>
-	    <url-pattern> /ServlerRedirectIgnacio           </url-pattern>
-	    <url-pattern> /ServletRedirectMikel             </url-pattern>
-	    <url-pattern> /ServletListaDepartamentos        </url-pattern>
-	    <url-pattern> /ServletSessionesActivas          </url-pattern>
-	    <url-pattern> /ServletSession                   </url-pattern>
-	    <url-pattern> /ServletRedireccionar             </url-pattern>
-	    <url-pattern> /ServletLogout                    </url-pattern>
+	      <url-pattern> /*       </url-pattern>
 	</filter-mapping>
 	
 	<filter>

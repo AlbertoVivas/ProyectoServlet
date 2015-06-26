@@ -15,7 +15,7 @@ import org.apache.logging.log4j.Logger;
 
 /**
  * @author Alberto Vivas
- *
+ *	Clase que me lleva a la pagina de iñaki
  * 
  */
 public class ServlerRedirectIgnacio extends HttpServlet{

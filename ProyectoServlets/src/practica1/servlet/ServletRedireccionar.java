@@ -16,7 +16,7 @@ import org.apache.logging.log4j.Logger;
 
 /**
  * @author Alberto Vivas
- *
+ *	Clase de redireccionamiento html
  * 
  */
 public class ServletRedireccionar extends HttpServlet{
@@ -28,7 +28,6 @@ public class ServletRedireccionar extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		log.debug("Entre al doget ServletRedireccionar");
-		//resp.sendRedirect("http://www.wikipedia.org");
 		resp.sendRedirect("http://172.16.1.57:8090/ProyectoServlets/Empleado.html");
 	}
 	

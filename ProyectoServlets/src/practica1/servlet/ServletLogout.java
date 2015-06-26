@@ -13,7 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * @author Alberto Vivas
- *
+ *	Con esta clase muestro que el usuario se ha deslogueado satisfactoriamente y posteriormente despues de 5 segundos
+ *	redirijo a la pagina de login, adicionalmente se tiene un boton volver que hace lo mismo.
  * 
  */
 public class ServletLogout extends HttpServlet {

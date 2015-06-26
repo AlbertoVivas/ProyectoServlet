@@ -49,7 +49,9 @@ public class MyFilter implements Filter{
 	public void doFilter(ServletRequest arg0, ServletResponse arg1,	FilterChain arg2) throws IOException, ServletException {
 		log.trace("Ha entrado en doFilter");
 		//preprocesamiento
-		String login="http://172.16.1.57:8090/ProyectoServlets/Login.html";
+		String login="http://172.16.1.57:8090/ProyectoServlets/Login.html"; // \
+		String s_login = "/ProyectoServlets/ServletLogin";                  //  |- direcciones que necesito que no filtre
+		String p_login = "/ProyectoServlets/Login.html";                    // /
 		t1=System.currentTimeMillis();
 		HttpServletRequest req = (HttpServletRequest) arg0;
 		HttpServletResponse resp = (HttpServletResponse) arg1;
@@ -58,12 +60,15 @@ public class MyFilter implements Filter{
 		HttpSession hs = req.getSession(false);
 		
 		if(null == hs){ //si no tiene sesion
-			if(rq_uri.equals(login)){
+			if(rq_uri.equals(login)|| rq_uri.equals(s_login)|| rq_uri.equals(p_login)){ //no tengo sesion pero,
+				log.debug("uri login, todo bien: "+rq_uri); // tengo una de las direcciones necesarias para logear
 				arg2.doFilter(arg0, arg1);
 			}else{
+				log.debug("La uri no es login: "+rq_uri);
 				resp.sendRedirect(login);
 			}
 		}else{ // si tengo sesion paso :)
+			log.debug("tengo httpsesion:  "+hs);
 			arg2.doFilter(arg0, arg1);	
 		}
 		
@@ -71,10 +76,10 @@ public class MyFilter implements Filter{
 		
 		
 		
-		t2=System.currentTimeMillis();
-		Long ts = (t2-t1)/1000;
-		Long tm = ts/60;
-		Long tsr = ts-tm*60;
+		t2=System.currentTimeMillis();  //\
+		Long ts = (t2-t1)/1000;			// | esto es solo para controlar cuanto tiempo pasa en el filter
+		Long tm = ts/60;				// |
+		Long tsr = ts-tm*60; 		   // /
 		//postprocesamiento
 		log.trace("Ha pasado el filter: "+tm+" min "+tsr+" segundos");
 	}

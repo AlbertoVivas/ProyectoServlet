@@ -25,7 +25,7 @@ import tablas_Clases.Employees;
 
 /**
  * @author Alberto Vivas
- *
+ *	Clase para obtener empleados por hibernate
  * 
  */
 @SuppressWarnings("serial")

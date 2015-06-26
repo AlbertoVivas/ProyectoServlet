@@ -24,7 +24,8 @@ import tablas_Clases.Users;
 
 /**
  * @author Alberto Vivas
- * 
+ * Clase para el login, el metodo doget solo es para cuando se redirecciona automaticamente
+ * en el metodo dopost esta todo el protocolo para un login satisfactorio.
  * 
  */
 @SuppressWarnings("serial")
@@ -49,18 +50,19 @@ public class ServletLogin extends HttpServlet {
 	 * javax.servlet.http.HttpServlet#doPost(javax.servlet.http.HttpServletRequest
 	 * , javax.servlet.http.HttpServletResponse)
 	 */
+	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		// Session session;
+
 		Users user_get = null;
 		HttpSession httpsession = null;
 
 		UsersHibernateDAO uhdao = new UsersHibernateDAO();
 
-		ServletContext sc = req.getServletContext();
-		SessionFactory sf = (SessionFactory) sc.getAttribute("sf");
-		Session session = sf.openSession();
+		ServletContext sc = req.getServletContext();				//guardo el servlet context (saco html con todo)
+		SessionFactory sf = (SessionFactory) sc.getAttribute("sf"); //recupero el session factory
+		Session session = sf.openSession();							//	
 		UsersHibernateDAO.setSession(session);
 
 		String nombre = req.getParameter("Nombre");
@@ -69,17 +71,17 @@ public class ServletLogin extends HttpServlet {
 		Users user = new Users(nombre, clave);
 
 		try {
-			user_get = uhdao.leerUser(nombre);
+			user_get = uhdao.leerUser(nombre);					// leo la base de datos y recupero un user el cual comparare con el
+																// introducido por la pagina y hay 3 opciones: usuario y pass conhinciden,
+																// usuario cohincide pero pass no y que el usuario introducido sea incorrecto.
 
 			if (user.getNombre().equals(user_get.getNombre())
 					&& user.getClave().equals(user_get.getClave())) {
 				resp.setContentType("text/html");
 				PrintWriter printWriter = resp.getWriter();
 				printWriter.println("<head>");
-				
 				printWriter.println("<meta http-equiv=\"Refresh\" content = 5, url = http://172.16.1.57:8090/ProyectoServlets/Login.html\"/>");
 				printWriter.println("Bienvenido: " + user.getNombre());
-				// printWriter.println("Numero de peticiones: "+num_pet);
 				printWriter.println(botom_volver);
 				printWriter.println("</head>");
 				httpsession = req.getSession();
@@ -92,7 +94,6 @@ public class ServletLogin extends HttpServlet {
 				resp.setContentType("text/html");
 				PrintWriter printWriter = resp.getWriter();
 				printWriter.println("Pass incorrecta");
-				// printWriter.println("Numero de peticiones: "+num_pet);
 				log.error("Pass introducida incorrecta: " + user.getNombre()
 						+ " " + user.getClave());
 				printWriter.println(botom_volver);
@@ -106,11 +107,12 @@ public class ServletLogin extends HttpServlet {
 			PrintWriter printWriter = resp.getWriter();
 			printWriter.println("Error al obtener usuario: " + user.getNombre()
 					+ " pass " + user.getClave());
-			// printWriter.println("Numero de peticiones: "+num_pet);
 			printWriter.println(botom_volver);
 		}
 
-		session.close();
+		session.close();  // me aseguro de liberar la sesion
+						 // Pd: todo el acceso a la BBDD deberia hacerse aparte (es mejor)	
+		
 
 	}
 

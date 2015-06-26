@@ -29,7 +29,7 @@ import tablas_Clases.Employees;
 
 /**
  * @author Alberto Vivas
- *
+ *	Clase para obtener un empleado, previa a la de obtener empleado hibernate
  * 
  */
 @SuppressWarnings("serial")

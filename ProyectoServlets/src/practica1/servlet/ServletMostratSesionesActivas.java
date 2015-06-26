@@ -19,7 +19,7 @@ import org.apache.logging.log4j.Logger;
 
 /**
  * @author Alberto Vivas
- *
+ *	clase que muestra las sesiones activas 
  * 
  */
 @SuppressWarnings("serial")

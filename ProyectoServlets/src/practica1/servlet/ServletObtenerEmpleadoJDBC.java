@@ -27,7 +27,7 @@ import tablas_Clases.Employees;
 
 /**
  * @author Alberto Vivas
- *
+ *	clase para obtener empleado por JDBC
  * 
  */
 public class ServletObtenerEmpleadoJDBC extends HttpServlet {

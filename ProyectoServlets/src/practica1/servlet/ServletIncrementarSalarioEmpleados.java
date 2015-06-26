@@ -29,7 +29,7 @@ import tablas_Clases.Employees;
 
 /**
  * @author Alberto Vivas
- *
+ *	clase que incrementa el salario de los empleados, el % de incremento esta como constante en el web.xml
  * 
  */
 public class ServletIncrementarSalarioEmpleados extends HttpServlet {

@@ -15,7 +15,7 @@ import org.apache.logging.log4j.Logger;
 
 /**
  * @author Alberto Vivas
- *
+ *	Pagina de mikel
  * 
  */
 public class ServletRedirectMikel extends HttpServlet{
@@ -27,7 +27,6 @@ public class ServletRedirectMikel extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		log.debug("Entre al doget ServletRedireccionar");
-		//resp.sendRedirect("http://www.wikipedia.org");
 		resp.sendRedirect("http://172.16.1.19:8090/ProyectoServlets/login.html");
 	}
 	
