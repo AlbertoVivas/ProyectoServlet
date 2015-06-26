@@ -32,6 +32,16 @@ public class ServletLogin extends HttpServlet {
 	private final Logger log = LogManager.getRootLogger();
 	private String botom_volver = "<form method=\"get\" action=\"http://172.16.1.57:8090/ProyectoServlets/Login.html\"> <button type= \"submit\">Back</button> </form>";
 
+	
+	/* (non-Javadoc)
+	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+	 */
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		resp.sendRedirect("http://172.16.1.57:8090/ProyectoServlets/Login.html");
+	}
+	
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -65,9 +75,13 @@ public class ServletLogin extends HttpServlet {
 					&& user.getClave().equals(user_get.getClave())) {
 				resp.setContentType("text/html");
 				PrintWriter printWriter = resp.getWriter();
+				printWriter.println("<head>");
+				
+				printWriter.println("<meta http-equiv=\"Refresh\" content = 5, url = http://172.16.1.57:8090/ProyectoServlets/Login.html\"/>");
 				printWriter.println("Bienvenido: " + user.getNombre());
 				// printWriter.println("Numero de peticiones: "+num_pet);
 				printWriter.println(botom_volver);
+				printWriter.println("</head>");
 				httpsession = req.getSession();
 				log.debug("Id de la sesión = " + httpsession.getId());
 				httpsession.setAttribute("nombre", user.getNombre());

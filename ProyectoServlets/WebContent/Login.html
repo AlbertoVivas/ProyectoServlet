@@ -2,37 +2,85 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Login</title>
+<title>Login de Alberto Vivas</title>
 </head>
 <body>
 <h1><strong>Login HTML</strong> </h1>
 
+<p>Servlet Login</p>
+<table>
+<tr>
+<td>
 <form action="ServletLogin" method="Post">
-<p>Nombre</p> 
-<input type ="text" name = "Nombre" />
-<p>Pass</p>
-<input type ="password" name = "Pass" />
-<input type="submit" value="Enviar"/>
+Nombre <input type ="text" name = "Nombre" />
+Pass <input type ="password" name = "Pass" />
+<input type="submit" value="Login"/>
 </form>
+</td>
 
-<!-- 
-<p>Servlet Sessiones</p>
-<form action="ServletSession" method="Get">
-<input type="submit" value="Obtener session"/>
+<td align="right">
+<form action="ServletLogout" method="Get">
+<input type="submit" value="Logout"/>
 </form>
- -->
+</td>
+</tr>
+</table>
+
  
 <p>Sessiones Activas</p>
 <form action="ServletSessionesActivas" method="Get">
 <input type="submit" value="Obtener sessiones activas"/>
 </form>
-</body>
+
 
 <p>Lista de departamentos</p>
 <form action="ServletListaDepartamentos" method="Get">
 <input type="submit" value="Obtener lista de departamentos"/>
 </form>
+
+
+<p>Redireccionamiento http</p>
+
+
+
+
+
+
+<table>
+<tr>
+<td align="center">Empleados Html</td>
+<td align="center">Pagina Mikel</td>
+<td align="center">Pagina Iñaki</td>
+<td align="center">Pagina Tamara</td>
+</tr>
+<tr>
+<td>
+<form action="ServletRedireccionar" method="Get">
+<input type="submit" value="Go Empleados html"/>
+</form>
+</td>
+<td>
+<form action="ServletRedirectMikel" method="Get">
+<input type="submit" value="Ir a la web de Mikel !!!"/>
+</form>
+</td>
+<td>
+<form action="ServlerRedirectIgnacio" method="Get">
+<input type="submit" value="Ir a la web de Iñaki !!!"/>
+</form>
+</td>
+<td>
+<form action="ServletRedirectTamara" method="Get">
+<input type="submit" value="Ir a la web de Tamara !!!"/>
+</form>
+</td>
+</tr>
+</table>
+
+<p>Pagina con: Control de Acceso, es necesario tener una sesion valida</p>
+
+
+
+
 </body>
-
-
 </html>

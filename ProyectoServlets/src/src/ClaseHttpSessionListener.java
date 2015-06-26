@@ -51,7 +51,7 @@ public class ClaseHttpSessionListener implements HttpSessionListener {
 		System.out.println("sessionDestroyed(HttpSessionEvent arg0)");
 		HttpSession httpsession= null;
 		t2=System.currentTimeMillis();
-		Long t = ((t2-t1)/60000);
+	
 		Long ts = (t2-t1)/1000;
 		Long tm = ts/60;
 		Long tsr = ts-tm*60;

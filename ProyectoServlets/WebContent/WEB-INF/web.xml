@@ -2,9 +2,9 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>ProyectoServlets</display-name>
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>Login.html</welcome-file>
+    <welcome-file>Login.htm</welcome-file>
+    <welcome-file>Login.jsp</welcome-file>
     <welcome-file>default.html</welcome-file>
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
@@ -84,6 +84,15 @@
   </servlet-mapping>
   
   <servlet>
+  	<servlet-name> ServletLogout</servlet-name>
+  	<servlet-class> practica1.servlet.ServletLogout</servlet-class>    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name> ServletLogout </servlet-name>
+    <url-pattern> /ServletLogout </url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
   	<servlet-name> ServletSession</servlet-name>
   	<servlet-class> practica1.servlet.ServletSession</servlet-class>    
   </servlet>
@@ -110,7 +119,41 @@
     <url-pattern> /ServletListaDepartamentos</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name> ServletRedireccionar</servlet-name>
+  	<servlet-class> practica1.servlet.ServletRedireccionar</servlet-class>    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name> ServletRedireccionar </servlet-name>
+    <url-pattern> /ServletRedireccionar</url-pattern>
+  </servlet-mapping>
   
+  <servlet>
+  	<servlet-name> ServletRedirectMikel</servlet-name>
+  	<servlet-class> practica1.servlet.ServletRedirectMikel</servlet-class>    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name> ServletRedirectMikel </servlet-name>
+    <url-pattern> /ServletRedirectMikel</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  	<servlet-name> ServlerRedirectIgnacio</servlet-name>
+  	<servlet-class> practica1.servlet.ServlerRedirectIgnacio</servlet-class>    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name> ServlerRedirectIgnacio </servlet-name>
+    <url-pattern> /ServlerRedirectIgnacio </url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name> ServletRedirectTamara</servlet-name>
+  	<servlet-class> practica1.servlet.ServletRedirectTamara</servlet-class>    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name> ServletRedirectTamara </servlet-name>
+    <url-pattern> /ServletRedirectTamara </url-pattern>
+  </servlet-mapping>
   
   
   
@@ -130,8 +173,17 @@
       <filter-class>src.MyFilter</filter-class>
   </filter>
 	<filter-mapping>
-	    <filter-name>MyFilter</filter-name>
-	    <url-pattern>/ServletObtenerEmpleado</url-pattern>
+	    <filter-name>  MyFilter                         </filter-name>
+	    <url-pattern> /ServletObtenerEmpleadoJDBC       </url-pattern>
+	    <url-pattern> /ServletObtenerEmpleadoHibernate  </url-pattern>
+	    <url-pattern> /ServletRedirectTamara            </url-pattern>
+	    <url-pattern> /ServlerRedirectIgnacio           </url-pattern>
+	    <url-pattern> /ServletRedirectMikel             </url-pattern>
+	    <url-pattern> /ServletListaDepartamentos        </url-pattern>
+	    <url-pattern> /ServletSessionesActivas          </url-pattern>
+	    <url-pattern> /ServletSession                   </url-pattern>
+	    <url-pattern> /ServletRedireccionar             </url-pattern>
+	    <url-pattern> /ServletLogout                    </url-pattern>
 	</filter-mapping>
 	
 	<filter>
