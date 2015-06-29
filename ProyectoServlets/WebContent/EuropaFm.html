@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body background="background.jpg">
+<div id="player">
+<p><img src="img/europa-fm.jpg" title="europa fm en directo"></p>
+<embed type="application/x-shockwave-flash" src="flux/mediaplayer.swf" width="280" height="20" style="" id="streambaby" name="streambaby" quality="high" allowscriptaccess="always" allowfullscreen="false" flashvars="autostart=true&amp;file=http://stream.irratia.net/2%3Ftype%3D.flv">
+
+<script type="text/javascript">
+var so = new SWFObject('flux/mediaplayer.swf', 'streambaby', '280', '20', '7');
+var stream = 'http://stream.irratia.net/2';
+var autostart = 'true';
+so.addParam('allowscriptaccess','always');
+     so.addParam('allowfullscreen','false');
+     so.addVariable('autostart', autostart);
+     so.addVariable('file', stream+'%3Ftype%3D.flv');
+     so.write('player');
+</script>
+</div>
+<form action="http://172.16.1.57:8090/ProyectoServlets/StreamingRadio.html"> 
+<input type="submit" value="Volver"/>
+</form>
+</body>
+</html>

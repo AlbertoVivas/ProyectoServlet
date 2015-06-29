@@ -155,6 +155,24 @@
     <url-pattern> /ServletRedirectTamara </url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name> ServletRedireccionarRadio</servlet-name>
+  	<servlet-class> practica1.servlet.ServletRedireccionarRadio</servlet-class>    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name> ServletRedireccionarRadio </servlet-name>
+    <url-pattern> /ServletRedireccionarRadio </url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name> ServletEscucharRadio</servlet-name>
+  	<servlet-class> practica1.servlet.ServletEscucharRadio</servlet-class>    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name> ServletEscucharRadio </servlet-name>
+    <url-pattern> /ServletEscucharRadio </url-pattern>
+  </servlet-mapping>
+  
   
   
   <listener>
@@ -167,7 +185,7 @@
 	<listener-class>src.ClaseServletRequestListener</listener-class>
   </listener>
   
-  
+ <!--   
   <filter>
       <filter-name>MyFilter</filter-name>
       <filter-class>src.MyFilter</filter-class>
@@ -176,7 +194,7 @@
 	    <filter-name>  MyFilter                         </filter-name>
 	      <url-pattern> /*       </url-pattern>
 	</filter-mapping>
-	
+-->	
 	<filter>
       <filter-name>MyFilterHibernate</filter-name>
       <filter-class>src.MyFilterHibernate</filter-class>

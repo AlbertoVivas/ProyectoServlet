@@ -52,15 +52,27 @@ public class MyFilter implements Filter{
 		String login="http://172.16.1.57:8090/ProyectoServlets/Login.html"; // \
 		String s_login = "/ProyectoServlets/ServletLogin";                  //  |- direcciones que necesito que no filtre
 		String p_login = "/ProyectoServlets/Login.html";                    // /
+		String rad = "/ProyectoServlets/ServletRedireccionarRadio";
+		String rad2 = "/ProyectoServlets/StreamingRadio.html";
+		String rad3 = "/ProyectoServlets/ServletEscucharRadio";
+		String bg = "/ProyectoServlets/background.jpg";
+		String oc = "/ProyectoServlets/OndaCero.html";
+		String eu = "/ProyectoServlets/EuropaFm.html";
+		String cad = "/ProyectoServlets/Cad100.html";
+		String rad4 = "/ProyectoServlets/Rad3.html";
+		
+		
+		
 		t1=System.currentTimeMillis();
 		HttpServletRequest req = (HttpServletRequest) arg0;
 		HttpServletResponse resp = (HttpServletResponse) arg1;
 		
 		String rq_uri = req.getRequestURI(); //La ruta a donde se pide ir
 		HttpSession hs = req.getSession(false);
-		
+		Boolean condicion = rq_uri.equals(login)|| rq_uri.equals(s_login)|| rq_uri.equals(p_login)|| rq_uri.equals(rad)|| rq_uri.equals(rad2)|| rq_uri.equals(rad3)|| rq_uri.equals(bg);
+		Boolean condicion2 = rq_uri.equals(bg)||rq_uri.equals(oc)||rq_uri.equals(eu)||rq_uri.equals(cad)||rq_uri.equals(rad4);
 		if(null == hs){ //si no tiene sesion
-			if(rq_uri.equals(login)|| rq_uri.equals(s_login)|| rq_uri.equals(p_login)){ //no tengo sesion pero,
+			if(condicion||condicion2){ //no tengo sesion pero,
 				log.debug("uri login, todo bien: "+rq_uri); // tengo una de las direcciones necesarias para logear
 				arg2.doFilter(arg0, arg1);
 			}else{
