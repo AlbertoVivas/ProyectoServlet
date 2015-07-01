@@ -47,7 +47,7 @@ public class ClaseServletContextListener implements ServletContextListener {
 		log.trace("contextInitialized, setted atribute sf&num_pet of server context");
 		Map<String,HttpSession> map = new HashMap<String, HttpSession>();
 		sc.setAttribute("map", map);
-		
+		//*/
 		
 		
 	}
