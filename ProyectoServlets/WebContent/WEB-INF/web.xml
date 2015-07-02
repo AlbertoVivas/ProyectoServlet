@@ -192,6 +192,52 @@
     <url-pattern> /ServletError </url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name> ServletPrimerJsp</servlet-name>
+  	<servlet-class> practica1.servlet.ServletPrimerJsp</servlet-class>    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name> ServletPrimerJsp </servlet-name>
+    <url-pattern> /ServletPrimerJsp </url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  	<servlet-name> ServletImitacionJSP</servlet-name>
+  	<servlet-class> practica1.servlet.ServletImitacionJSP</servlet-class>    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name> ServletImitacionJSP </servlet-name>
+    <url-pattern> /ServletImitacionJSP </url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name> ServletAdivinaIni</servlet-name>
+  	<servlet-class> practica1.servlet.ServletAdivinaIni</servlet-class>    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name> ServletAdivinaIni </servlet-name>
+    <url-pattern> /ServletAdivinaIni </url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name> ServletAdivina1</servlet-name>
+  	<servlet-class> practica1.servlet.ServlerAdivina1</servlet-class>    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name> ServletAdivina1 </servlet-name>
+    <url-pattern> /ServletAdivina1 </url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name> ServletAdivinaInicio</servlet-name>
+  	<servlet-class> practica1.servlet.ServletAdivinaInicio</servlet-class>    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name> ServletAdivinaInicio </servlet-name>
+    <url-pattern> /ServletAdivinaInicio </url-pattern>
+  </servlet-mapping>
+  
+  
+  
   <listener>
 	<listener-class>src.ClaseServletContextListener</listener-class>
   </listener>

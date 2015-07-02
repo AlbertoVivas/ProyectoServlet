@@ -44,6 +44,15 @@ public class ClaseServletContextListener implements ServletContextListener {
 		sc.setAttribute("sf", sf);
 		int num_pet=0;
 		sc.setAttribute("num_pet", num_pet);
+		int max=100;
+		int min=0;
+		int num=0;
+		String es ="";
+		sc.setAttribute("max",max );
+		sc.setAttribute("min", min);
+		sc.setAttribute("num", num);
+		sc.setAttribute("es", es);
+		
 		log.trace("contextInitialized, setted atribute sf&num_pet of server context");
 		Map<String,HttpSession> map = new HashMap<String, HttpSession>();
 		sc.setAttribute("map", map);
