@@ -1,6 +1,7 @@
 package practica1.hibernate;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -43,5 +44,11 @@ public class EmpleadoHibernateDAO implements Recuperable {
 		}
 		return empleado;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Employees> listEmpPorDepId(int depid){
+		return session.createSQLQuery("SELECT * from EMPLOYEES where DEPARTMENT_ID="+depid).addEntity(Employees.class).list();
+	}
+	
 
 }

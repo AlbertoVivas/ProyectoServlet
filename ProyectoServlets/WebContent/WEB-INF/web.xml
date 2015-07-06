@@ -173,6 +173,23 @@
     <url-pattern> /ServletEscucharRadio </url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name> ServletMostrarEmpleadosPorDepId</servlet-name>
+  	<servlet-class> practica1.servlet.ServletMostrarEmpleadosPorDepId</servlet-class>    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name> ServletMostrarEmpleadosPorDepId </servlet-name>
+    <url-pattern> /ServletMostrarEmpleadosPorDepId </url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name> ServletObtenerEmpleadoJsp</servlet-name>
+  	<servlet-class> practica1.servlet.ServletObtenerEmpleadoJsp</servlet-class>    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name> ServletObtenerEmpleadoJsp </servlet-name>
+    <url-pattern> /ServletObtenerEmpleadoJsp </url-pattern>
+  </servlet-mapping>
+  
   
    <servlet>
   	<servlet-name> ServletCookie</servlet-name>

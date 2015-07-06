@@ -29,6 +29,9 @@ import tablas_Clases.Departments;
  */
 public class ServletListaDepartamentos extends HttpServlet{
 	Session session;
+	private String boton_volver="<form method=\"get\" action=\"http://localhost:8090/ProyectoServlets/Login.html\"> <button type= \"submit\">Back</button> </form>";
+	private String boton_enviar1="<form method=\"get\" action=\"ServletMostrarEmpleadosPorDepId\">";
+	private String boton_enviar2="<button type= \"submit\">Enviar</button> </form>";
 	/* (non-Javadoc)
 	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 */
@@ -44,16 +47,19 @@ public class ServletListaDepartamentos extends HttpServlet{
 		printWriter.println("<p>");
 		printWriter.println("<b>Lista de departaments</b><br>");
 		Iterator<Departments> it = list.iterator();
-		printWriter.println("<select>");
+		printWriter.println(boton_enviar1);
+		printWriter.println("<select name=\"DepID\">");
 		while(it.hasNext()){
 			d = it.next();
 			printWriter.println("<option value=\""+d.getDepartmentId()+"\">"+d.getDepartmentName()+"</option>");
 		}
 		printWriter.println("</select>");
 		printWriter.println("</p>");
+		printWriter.println(boton_enviar2);
+		printWriter.println("<p>"+boton_volver+"</p>");
 		
-		RequestDispatcher rd = req.getRequestDispatcher("/ServletSessionesActivas");
-		rd.include(req, resp);
+		//RequestDispatcher rd = req.getRequestDispatcher("/ServletSessionesActivas");
+		//rd.include(req, resp);
 	}
 
 }

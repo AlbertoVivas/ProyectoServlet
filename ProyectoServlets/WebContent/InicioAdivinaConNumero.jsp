@@ -38,6 +38,7 @@ public int num_al(int lim_inf, int lim_sup){
 		
 		if(es.equals("")){//primera vez
 			num = num_al(min, max); // calculamos el numero random entre 0-100
+			es = " ";
 			%><p>calculamos un nuevo numero</p>
 			  <p>entre <%=min%> y <%=max%> = <%=num%></p>	 
 			<%
@@ -48,14 +49,14 @@ public int num_al(int lim_inf, int lim_sup){
 				min = num;
 				num  = num_al(min, max);
 				%><p>es ">" </p>
-				  <p>calculamos num entre <%=min%> y <%=max%> = <%=num%>	 
+				  <p>calculamos num entre <%=min%> y <%=max%> = <%=num%></p>	 
 				<%
 			}else{
 				if(es.equals("2")){//mi numero es menor que el calculado 
 					max=num;
 					num  = num_al(min, max);
 					%><p>es ">" </p>
-					  <p>calculamos num entre <%=min%> y <%=max%> = <%=num%>	 
+					  <p>calculamos num entre <%=min%> y <%=max%> = <%=num%></p>	 
 					<%
 					
 				}else{//es =
@@ -67,6 +68,7 @@ public int num_al(int lim_inf, int lim_sup){
 			}
 			
 		}
+		if(!encontrado){
 		%>
 		<form action="InicioAdivinaConNumero.jsp" method="Get">
 		<select name="es">
@@ -76,16 +78,20 @@ public int num_al(int lim_inf, int lim_sup){
 		</select>
 		<input type="submit" value="go"/>
 		</form>
-		
 		<% 
-		
+		}else{
+			min =0;
+			max =100;
+			num =0;
+			encontrado = false;
+			es = "";
+			%>
+			<form action="InicioAdivinaNumero.jsp" method="Get">
+			<input type="submit" value="Empezar"/>
+			</form>
+			<%
+		}
 	}
-
 %>
-
-
-
-
-
 </body>
 </html>
