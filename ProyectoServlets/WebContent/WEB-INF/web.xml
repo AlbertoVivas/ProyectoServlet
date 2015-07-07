@@ -84,6 +84,27 @@
   </servlet-mapping>
   
   <servlet>
+  	<servlet-name> ServletListaDepartamentosJsp</servlet-name>
+  	<servlet-class> practica1.servlet.ServletListaDepartamentosJsp</servlet-class>    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name> ServletListaDepartamentosJsp </servlet-name>
+    <url-pattern> /ServletListaDepartamentosJsp </url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name> ServletMostrarEmpleadosPorDepIdJSTL</servlet-name>
+  	<servlet-class> practica1.servlet.ServletMostrarEmpleadosPorDepIdJSTL</servlet-class>    
+  </servlet>
+  <servlet-mapping>
+    <servlet-name> ServletMostrarEmpleadosPorDepIdJSTL </servlet-name>
+    <url-pattern> /ServletMostrarEmpleadosPorDepIdJSTL </url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+  <servlet>
   	<servlet-name> ServletLogout</servlet-name>
   	<servlet-class> practica1.servlet.ServletLogout</servlet-class>    
   </servlet>

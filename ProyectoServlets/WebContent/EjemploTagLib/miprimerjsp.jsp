@@ -4,17 +4,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Mi primer JSP</title>
 </head>
 <body>
-	<p>Jsp que adivina el numero que piensas</p>
-	<p>piensa en un numero y pulsa <form action="ServletAdivinaIni" method="Get">
-	<input type="submit" value="go"/>
-	</form></p>
-	
-	<form action="/ProyectoServlets/Login.html" method="Get">
-	<input type="submit" value="Volver"/>
-	</form>
+
+<%!int n = 0; %><%--DECLARACIÓN! :) --%>
+
+<%n++; %><%--SCRIPTLET --%>
+
+<p>EL usuario está llamando <%=n%> veces <%--EXPRESIÓN! --%>
+<p>Luego es un número de veces
+<%if ((n%2)==0) { %><b>par</b>
+<%} else { %><b> impar</b> <%} %> 
 
 </body>
 </html>
