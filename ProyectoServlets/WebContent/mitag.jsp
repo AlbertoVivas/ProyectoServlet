@@ -13,6 +13,8 @@ ETIQUETA SIMPLE! <br>
 <mitag:nveces  num="3">Es esto!</mitag:nveces>
 <mitag:atrDinamico  num="5">${count}</mitag:atrDinamico>
 <br>ETIQUETA CLASSIC! <br>
-<mitag:classic  num="5" idcountry="${count}">${count}</mitag:classic>
+<mitag:classic  num="5" idcountry="${count}">${count}</mitag:classic>ç
+<p>Departamentos</p>
+<mitag:departamentos depid="80">80</mitag:departamentos>
 </body>
 </html>

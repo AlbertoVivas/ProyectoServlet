@@ -28,6 +28,7 @@ public class ClaseHttpSessionListener implements HttpSessionListener {
 	 */
 	@Override
 	public void sessionCreated(HttpSessionEvent arg0) {
+		
 		System.out.println("sessionCreated(HttpSessionEvent arg0)");
 		t1=System.currentTimeMillis();
 		log.trace("Ha entrado en session created: "+arg0.getSession().getId()+" creada en: "+arg0.getSession().getCreationTime());

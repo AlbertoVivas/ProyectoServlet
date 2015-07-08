@@ -54,4 +54,15 @@
             <rtexprvalue>true</rtexprvalue>
         </attribute>
     </tag>
+    
+    <tag>
+        <description>Etiqueta que recibe el id del departamento y muestre los trabajadores</description>
+        <name>departamentos</name>
+        <tag-class>customTags.EtiquetaEmpleadosDepartamento</tag-class>
+        <body-content>scriptless</body-content> <!-- Es un valor dinámico -->
+        <attribute>
+            <name>depid</name>
+            <required>true</required>
+        </attribute>
+    </tag>
 </taglib>

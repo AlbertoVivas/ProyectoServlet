@@ -30,7 +30,8 @@ public class EtiquetaSimpleBucle extends SimpleTagSupport{
 		for (int i = 0; i < num; i++) {
 			
 			getJspBody().invoke(null);
-			
+			//si pe paso algo dentro del invoke le añade el ontenido del body a la variable
+			//si le paso null imprime en pantalla
 		}
 		
 	}
